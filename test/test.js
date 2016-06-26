@@ -1,5 +1,5 @@
 import expect from 'must';
-import toMessages from '../src';
+import toMessages, { toMessage } from '../src';
 
 describe('toMessages', () => {
   it('transform messages array to dictionary', () => {
@@ -15,15 +15,18 @@ describe('toMessages', () => {
     expect(messages).to.be.an.object();
     expect(Object.keys(messages)).to.eql([]);
   });
+});
+describe('toMessage', () => {
   it('trasnform distinguishable messages with same name', () => {
-    const message1 = ['MESSAGE']::toMessages().MESSAGE;
-    const message2 = ['MESSAGE']::toMessages().MESSAGE;
+    const messageName = 'MESSAGE';
+    const message1 = messageName::toMessage();
+    const message2 = messageName::toMessage();
     expect(message1).not.to.equal(message2);
     expect(message1).not.to.eql(message2);
   });
 });
 describe('message', () => {
-  const message = ['MESSAGE']::toMessages().MESSAGE;
+  const message = 'MESSAGE'::toMessage();
   it('toString() implemented', () => {
     expect(message.toString()).to.equal('MESSAGE');
   });

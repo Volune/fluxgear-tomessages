@@ -1,7 +1,7 @@
 {
-  "name": "fluxgear-project-common",
+  "name": "fluxgear-tomessages",
   "version": "0.1.0",
-  "description": "Common files for all fluxgear module projects",
+  "description": "[FluxGear] Transform a list of messages to a dictionary of distinguishable message objects",
   "scripts": {
     "test": "npm run-script eslint && npm run-script mocha",
     "mocha": "mocha --compilers js:babel-core/register --recursive test",

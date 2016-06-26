@@ -2,7 +2,10 @@
   "name": "fluxgear-tomessages",
   "version": "0.1.0",
   "description": "[FluxGear] Transform a list of messages to a dictionary of distinguishable message objects",
+  "main": "./lib/index.js",
   "scripts": {
+    "build": "babel -s -d lib src",
+    "prepublish": "npm run build",
     "test": "npm run-script eslint && npm run-script mocha",
     "mocha": "mocha --compilers js:babel-core/register --recursive test",
     "eslint": "eslint ."
@@ -27,7 +30,6 @@
     "eslint-plugin-jsx-a11y": "^1.4.2",
     "eslint-plugin-react": "^5.1.1",
     "mocha": "^2.5.3",
-    "must": "^0.13.1",
-    "webpack": "^1.13.1"
+    "must": "^0.13.1"
   }
 }

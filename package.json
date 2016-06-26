@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "description": "Common files for all fluxgear module projects",
   "scripts": {
+    "test": "npm run-script eslint && npm run-script mocha",
+    "mocha": "mocha --compilers js:babel-core/register --recursive test",
     "eslint": "eslint ."
   },
   "author": "Jeremy Judeaux <jeremy.judeaux@volune.net>",

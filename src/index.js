@@ -1,13 +1,23 @@
 function toMessage() {
   const key = String(this);
-  return {
-    toString() {
-      return key;
+  const message = {};
+  Object.defineProperties(message, {
+    name: {
+      value: key,
+      enumerable: true,
     },
-    toJSON() {
-      return key;
+    toString: {
+      value() {
+        return key;
+      },
     },
-  };
+    toJSON: {
+      value() {
+        return key;
+      },
+    },
+  });
+  return message;
 }
 
 function toMessages() {

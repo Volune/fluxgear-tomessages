@@ -8,7 +8,7 @@ describe('toMessages', () => {
     expect(Object.keys(messages).sort()).to.eql(['HELLO', 'WORLD']);
     expect(messages.HELLO).to.be.truthy();
     expect(messages.WORLD).to.be.truthy();
-    expect(messages.HELLO).not.to.eql(messages.WORLD);
+    expect(messages.HELLO).not.to.equal(messages.WORLD);
   });
   it('doesn\'t fail with empty array', () => {
     const messages = []::toMessages();
@@ -22,7 +22,6 @@ describe('toMessage', () => {
     const message1 = messageName::toMessage();
     const message2 = messageName::toMessage();
     expect(message1).not.to.equal(message2);
-    expect(message1).not.to.eql(message2);
   });
 });
 describe('message', () => {
